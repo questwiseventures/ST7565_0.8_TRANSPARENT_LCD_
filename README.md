@@ -1,4 +1,5 @@
 This is a library for ST7565 Monochrome LCD Display.
+
 These displays use SPI to communicate, 4 or 5 pins are required to interface.
 
 This is a free library WITH NO WARRANTY, use it at your own risk!

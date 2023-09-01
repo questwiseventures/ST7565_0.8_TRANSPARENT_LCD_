@@ -1,6 +1,6 @@
 This is a library for ST7565 Monochrome LCD Display.
 
-These displays use SPI to communicate with the Arduino board, 4 or 5 pins are required (chip select pin connection is optional, if not used then it should be connected to GND).
+These display uses SPI to communicate with the Arduino board, 4 or 5 pins are required (chip select pin connection is optional, if not used then it should be connected to GND).
 
 This is a free library WITH NO WARRANTY, use it at your own risk!
 

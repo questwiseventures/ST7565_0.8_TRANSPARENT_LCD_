@@ -62,7 +62,7 @@ static const unsigned char PROGMEM logo_bmp[] =
 void setup()   {                
   Serial.begin(9600);
 
-  // initialize the ST7565 LCD display with contrast = 12 (0 <= coontrast <= 63)
+  // initialize the ST7565 LCD display with contrast = 13 (0 <= coontrast <= 63)
   display.begin(13);
 
   display.display();

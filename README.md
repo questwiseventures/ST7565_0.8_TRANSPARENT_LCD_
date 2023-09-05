@@ -14,4 +14,4 @@ being present on your system. Please make sure you have installed the latest ver
 
 Website: https://simple-circuit.com/
 
-Example URL:
+Example URL: https://simple-circuit.com/interfacing-arduino-st7565-lcd-graphics-test-example/

@@ -20,13 +20,11 @@
 #include <Adafruit_GFX.h>
 #include <ST7565_LCD.h>
 
-// ST7565 LCD connection with Arduino board using software SPI
-#define LCD_DIN    9
-#define LCD_SCLK   8
-#define LCD_A0     7
-#define LCD_RESET  6
-#define LCD_CS     5
-ST7565_LCD display = ST7565_LCD(LCD_DIN, LCD_SCLK, LCD_A0, LCD_RESET, LCD_CS);
+// connect LCD 'DIN' & 'SCLK' to board's hardware SPI pins
+#define LCD_A0     9
+#define LCD_RESET  8
+#define LCD_CS     10
+ST7565_LCD display = ST7565_LCD(LCD_A0, LCD_RESET, LCD_CS);
 
 /*/ Comment out above, uncomment this block to use hardware SPI
 // connect LCD 'DIN' & 'SCLK' to board's hardware SPI pins
@@ -63,7 +61,10 @@ void setup()   {
   Serial.begin(9600);
 
   // initialize the ST7565 LCD display with contrast = 13 (0 <= coontrast <= 63)
-  display.begin(13);
+  display.begin(63);
+  display.setContrast(25);
+  display.setRotation(2);
+    
 
   display.display();
   delay(2000); // Pause for 2 seconds

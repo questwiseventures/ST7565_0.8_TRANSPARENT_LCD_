@@ -36,7 +36,7 @@
 #define ST7565_OFF 0      // OFF pixel
 #define ST7565_INVERSE 2  // inverse pixel
 
-#define LCDWIDTH 128
+#define LCDWIDTH 48
 #define LCDHEIGHT 64
 
 #define CMD_DISPLAY_OFF   0xAE  // lcd off
@@ -45,8 +45,8 @@
 #define CMD_SET_DISP_START_LINE  0x40  // start line address, 0x40
 #define CMD_SET_PAGE  0xB0   // start page address
 
-#define CMD_SET_COLUMN_UPPER  0x10
-#define CMD_SET_COLUMN_LOWER  0x00
+#define CMD_SET_COLUMN_UPPER  0x12
+#define CMD_SET_COLUMN_LOWER  0x08
 
 #define CMD_SET_ADC_NORMAL  0xA0
 #define CMD_SET_ADC_REVERSE 0xA1

@@ -201,6 +201,25 @@ void ST7565_LCD::begin(uint8_t contrast) {
   delay(500);
   digitalWrite(rst, HIGH);
 
+	//DEBUG
+	command(0xe2);	//软复位
+	delay(20);
+	//delay_ms(20);
+	command(0xa0);  //列扫描顺序：从左到右
+	command(0xc8);  //行扫描顺序：从下到上，c0从上到下
+	command(0xa2);	//设置偏压比1/9
+	command(0x2f);	//控制电源
+	command(0x25);	//粗调对比度
+	//LCD_WR_Byte(Brightness,LCD_CMD);  //微调对比度,进入微调对比度命令
+	command(0x19);  //起始行：第一行开始
+	command(0x40);
+	command(0xA4);
+	command(0xaf);  //开显示
+
+	
+	
+	
+/*	
   // LCD bias select
   command(CMD_SET_BIAS_7);
   // ADC select
@@ -229,8 +248,11 @@ void ST7565_LCD::begin(uint8_t contrast) {
   command(CMD_SET_RESISTOR_RATIO | 0x6);
   command(CMD_DISPLAY_ON);
   command(CMD_SET_ALLPTS_NORMAL);
+  
   setContrast(contrast);
   setRotation(0);
+  
+  */
 }
 
 inline void ST7565_LCD::spiwrite(uint8_t c) {

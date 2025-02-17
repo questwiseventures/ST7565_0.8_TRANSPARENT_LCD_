@@ -3,7 +3,7 @@
  * 
  * Interfacing Arduino with ST7565 Monochrome LCD (128x64 Pixel)
  * This is a free software with NO WARRANTY - Use it at your own risk!
- * https://simple-circuit.com/
+ * 
  *
 ***********************************************************************************
  Written by Limor Fried/Ladyada for Adafruit Industries,
@@ -12,27 +12,18 @@
  All text above, and the splash screen below must be
  included in any redistribution.
 ************************************************************************************
- Modified to work with ST7565 Monochrome LCD.
- https://simple-circuit.com/
+ Modified to work with ST7565 Monochrome 0.8 Inch Transparent LCD.
  **********************************************************************************/
 
 #include <SPI.h>
 #include <Adafruit_GFX.h>
 #include <ST7565_LCD.h>
 
-// connect LCD 'DIN' & 'SCLK' to board's hardware SPI pins
 #define LCD_A0     9
 #define LCD_RESET  8
 #define LCD_CS     10
 ST7565_LCD display = ST7565_LCD(LCD_A0, LCD_RESET, LCD_CS);
 
-/*/ Comment out above, uncomment this block to use hardware SPI
-// connect LCD 'DIN' & 'SCLK' to board's hardware SPI pins
-#define LCD_A0     7
-#define LCD_RESET  6
-#define LCD_CS     5
-ST7565 display = ST7565(LCD_A0, LCD_RESET, LCD_CS);
-*/
 
 #define NUMFLAKES     10 // Number of snowflakes in the animation example
 

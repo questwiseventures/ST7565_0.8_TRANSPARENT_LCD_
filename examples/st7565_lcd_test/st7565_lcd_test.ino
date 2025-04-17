@@ -55,29 +55,15 @@ void setup()   {
   display.begin(63);
   display.setContrast(25);
   display.setRotation(2);
+
+  // Clear the buffer
+  display.clearDisplay();  
     
 
   display.display();
   delay(2000); // Pause for 2 seconds
 
-  testscrolldisplay();    // scroll whole display in different directions
-
-  // Clear the buffer
-  display.clearDisplay();
-
-  // Draw a single pixel in white
-  display.drawPixel(10, 10, ST7565_ON);
-
-  // Show the display buffer on the screen. You MUST call display() after
-  // drawing commands to make them visible on screen!
-  display.display();
-  delay(2000);
-
-  // display.display() is NOT necessary after every single drawing command,
-  // unless that's what you want...rather, you can batch up a bunch of
-  // drawing operations and then update the screen all at once by calling
-  // display.display(). These examples demonstrate both approaches...
-
+ 
   testdrawline();      // Draw many lines
 
   testdrawrect();      // Draw rectangles (outlines)
@@ -98,6 +84,8 @@ void setup()   {
 
   testdrawchar();      // Draw characters of the default font
 
+  testscrolldisplay();    // scroll whole display in different directions    
+
   testdrawstyles();    // Draw 'stylized' characters
 
   testscrolltext();    // Draw scrolling text
@@ -111,6 +99,8 @@ void setup()   {
   delay(1000);
 
   testanimate(logo_bmp, LOGO_WIDTH, LOGO_HEIGHT); // Animate bitmaps
+
+  
 
 }
 
@@ -193,7 +183,7 @@ void testdrawline() {
     delay(1);
   }
   for(i=0; i<display.height(); i+=4) {
-    display.drawLine(0, 0, display.width()-1, i, ST7565_ON);
+    display.drawLine(0, 0, display.width()-1, i, ST7565_ON);    
     display.display();
     delay(1);
   }
@@ -244,8 +234,8 @@ void testdrawline() {
 }
 
 void testdrawrect(void) {
+  
   display.clearDisplay();
-
   for(int16_t i=0; i<display.height()/2; i+=2) {
     display.drawRect(i, i, display.width()-2*i, display.height()-2*i, ST7565_ON);
     display.display(); // Update screen with each newly-drawn rectangle
